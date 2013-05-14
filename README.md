@@ -1,0 +1,1 @@
+See http://thejoeconwayblog.wordpress.com/2013/05/14/stktableviewcell-simplifying-uitableviewcell/ for details.
