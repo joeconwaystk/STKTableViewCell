@@ -32,9 +32,6 @@
             [tv registerClass:self forCellReuseIdentifier:className];
         
         cell = [tv dequeueReusableCellWithIdentifier:className];
-
-        // Give subclass option to override for extra initialization
-        [cell cellDidLoad];
     }
     
     [cell setActionTarget:target];
@@ -47,14 +44,18 @@
 {
     self = [super initWithCoder:aDecoder];
     if(self) {
-
+        [self cellDidLoad];
     }
     return self;
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
-    return [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if(self) {
+        [self cellDidLoad];
+    }
+    return self;
 }
 
 - (void)layoutSubviews
