@@ -40,11 +40,15 @@
     return cell;
 }
 
+- (void)awakeFromNib
+{
+    [self cellDidLoad]; 
+}
+
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     if(self) {
-        [self cellDidLoad];
     }
     return self;
 }
